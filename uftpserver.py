@@ -85,8 +85,8 @@ def ftpserver():
                         cl.sendall("230 Logged in.\r\n")
                     elif command == "SYST":
                         cl.sendall("215 ESP8266 MicroPython\r\n")
-#                    elif command == "SYST":
-#                        cl.sendall("502\r\n")
+                    elif command == "NOOP":
+                        cl.sendall("200 OK\r\n")
                     elif command == "PWD":
                         cl.sendall('257 "{}"\r\n'.format(cwd))
                     elif command == "CWD":
@@ -146,6 +146,18 @@ def ftpserver():
                             cl.sendall('550 Failed to send file\r\n')
                         finally:
                             dataclient.close()
+                    elif command == "DELE" or command == "RMD":
+                        try:
+                            os.remove(get_absolute_path(cwd, payload))
+                            cl.sendall("250 Object deleted.\r\n")
+                        except:
+                            cl.sendall('550 Failed to delete\r\n')
+                    elif command == "MKD":
+                        try:
+                            os.mkdir(payload)
+                            cl.sendall("250 Directory created.\r\n")
+                        except:
+                            cl.sendall('550 Failed to create\r\n')
                     else:
                         cl.sendall("502 Unsupported command.\r\n")
                         print("Unsupported command {} with payload {}".format(command, payload))
