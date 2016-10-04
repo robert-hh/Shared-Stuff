@@ -61,8 +61,9 @@ def ftpserver():
 
     try:
         dataclient = None
-        trying = True
-        while trying:
+        fromname = ""
+        toname = ""
+        while True:
             cwd = "/"
             cl, remote_addr = ftpsocket.accept()
             cl.settimeout(300)
@@ -73,7 +74,6 @@ def ftpserver():
                     data = cl.readline().decode("utf-8").replace("\r\n", "")
                     if len(data) <= 0:
                         print("Client is dead")
-                        # trying = False
                         break
                     
                     command, payload =  (data.split(" ") + [""])[:2]
@@ -87,6 +87,8 @@ def ftpserver():
                         cl.sendall("215 ESP8266 MicroPython\r\n")
                     elif command == "NOOP":
                         cl.sendall("200 OK\r\n")
+                    elif command == "FEAT":
+                        cl.sendall("211 no-features\r\n")
                     elif command == "PWD":
                         cl.sendall('257 "{}"\r\n'.format(cwd))
                     elif command == "CWD":
@@ -158,6 +160,19 @@ def ftpserver():
                             cl.sendall("250 Directory created.\r\n")
                         except:
                             cl.sendall('550 Failed to create\r\n')
+                    elif command == "RNFR":
+                            fromname = get_absolute_path(cwd, payload)
+                            cl.sendall("350 Rename from\r\n")
+                    elif command == "RNTO":
+                            if (fromname): 
+                                try:
+                                    os.rename(fromname, get_absolute_path(cwd, payload))
+                                    cl.sendall("250 File renamed.\r\n")
+                                except:
+                                    cl.sendall('550 Failed to rename\r\n')
+                            else:
+                                cl.sendall('550 Failed to rename\r\n')
+                            fromname = ""
                     else:
                         cl.sendall("502 Unsupported command.\r\n")
                         print("Unsupported command {} with payload {}".format(command, payload))
