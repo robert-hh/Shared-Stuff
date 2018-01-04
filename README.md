@@ -16,12 +16,12 @@ Included in frozen bytecode is the editor pye and the module upysh, which provid
 - libesp32.a: A variant of this file, in which get_revision() is defined as weak
 link. It therfore can be overriden by a homebrew version of get_revision().
 The one I use (and placed into main.c) looks like:  
-
-    #if MICROPY_PY_FORCE_REV0  
-    IRAM_ATTR uint32_t esp_get_revision(void)
-    {
-        return 0;
-    }
-    #endif
-
+```
+#if MICROPY_PY_FORCE_REV0
+IRAM_ATTR uint32_t esp_get_revision(void)
+{
+    return 0;
+}
+#endif
+```
 - xtensa Instruction Set Architecture (ISA).pdf: assembler instruction set of the xtensa architecture, matching the esp8266
