@@ -9,10 +9,11 @@ Two major changes are included:
   a) The call to get_revision() always returns 0, making the pycom image believe that
 there is no SPIRam.  
   b) Pin names like "GPIO21" can be used, which match the numbers
-printed on the LOLIN's PCB.  
+printed on the LOLIN's PCB, limited to those GPIO's which are available on a WiPy board.  
 This image also runs on other ESP32 boards like ESP32Thing, Huzzah ESP32, ...   
 Some of these board require a lower baud rate for flashing.
-Included in frozen bytecode is the editor pye and the module upysh, which provides some shell like commands.
+Included in frozen bytecode is the editor pye and the module upysh, which provides some shell like commands.  
+** This is just a hack and not meant to replace PyCom's boards. These images may not run an other boards, e.g. because components or manufacturing quality are worse **
 - libesp32.a: A variant of this file, in which get_revision() is defined as weak
 link. It therfore can be overriden by a homebrew version of get_revision().
 The one I use (and placed into main.c) looks like:  
