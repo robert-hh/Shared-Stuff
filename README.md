@@ -4,7 +4,7 @@
 - mpy-cross_pycom.exe: Windows version of Micropython cross-compiler for the pycom build
 - mpy-cross_pycom_linux: Linux version for the Pycom branch
 - mpy-cross_microython_org_linux: Linux version for the Micropython.org branch
-- wipy_pycom_1.11.0.b1.bin and wipy_pycom_1.12.0.b1.bin: Variants of the pycom image for Wemos LOLIN32 lite or other ESP32 boards with a rev 1 chip but without SPIRAM.
+- wipy_pycom_1.12.0.b1.bin: Variant of the pycom image for Wemos LOLIN32 lite or other ESP32 boards with a rev 1 chip but without SPIRAM.
 Two major changes are included:  
   a) The call to get_revision() always returns 0, making the pycom image believe that
 there is no SPIRam.  
