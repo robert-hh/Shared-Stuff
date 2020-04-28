@@ -5,3 +5,11 @@
 - mpy-cross_pycom_linux: Linux version for the Pycom branch
 - mpy-cross_microython_org_linux: Linux version for the Micropython.org branch
 - xtensa Instruction Set Architecture (ISA).pdf: assembler instruction set of the xtensa architecture, matching the esp8266
+
+Some Pycom tarballs:
+
+HELTEC_WS-1.20.2.rc6.tar.gz   Tar-Ball for the Heltec Wireless Stick, 800-900MHz
+HELTEC_WSL-1.20.2.rc6.tar.gz  Tar-Ball for the Heltec Wireless Stick Lite, 800-900MHz
+
+The difference between the two is the amount of flash which is assumed. 
+8MB for the -WS and 4 MB for the -WSL board. 
