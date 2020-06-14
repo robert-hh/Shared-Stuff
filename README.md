@@ -5,6 +5,8 @@
 - mpy-cross_pycom_linux: Linux version for the Pycom branch
 - mpy-cross_microython_org_linux: Linux version for the Micropython.org branch
 - xtensa Instruction Set Architecture (ISA).pdf: assembler instruction set of the xtensa architecture, matching the esp8266
+- wm_w600_lfs.fls: Firmware for the W60x chip without threading
+- wm_w600_lfs_threading.fls: Firmware for the W60x chip with threading
 
 Some Pycom tarballs:
 
