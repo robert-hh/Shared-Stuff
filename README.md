@@ -7,6 +7,8 @@
 - xtensa Instruction Set Architecture (ISA).pdf: assembler instruction set of the xtensa architecture, matching the esp8266
 - wm_w600_lfs.fls: Firmware for the W60x chip without threading
 - wm_w600_lfs_threading.fls: Firmware for the W60x chip with threading
+- wm_w600_FAT.fls: Firmware for the W60x chip without threading
+- wm_w600_FAT_threading.fls: Firmware for the W60x chip with threading
 
 Some Pycom tarballs:
 
