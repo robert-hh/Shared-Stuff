@@ -468,7 +468,7 @@ class ConsoleWindows:
                                      b"\x93": b"3;5~",  # CTRL-DEL
                                      b"R" : b"2~",  # INS
                                      b"\x92": b"2;5~",  # CTRL-INS
-                                     b"\x94" :"Z",  # Ctrl-Tab = BACKTAB,
+                                     b"\x94" : b"Z",  # Ctrl-Tab = BACKTAB,
                                     }[ch]
                 except KeyError:
                     return None
