@@ -9,6 +9,7 @@
 - wm_w600_lfs_threading.fls: Firmware for the W60x chip with threading
 - wm_w600_FAT.fls: Firmware for the W60x chip without threading
 - wm_w600_FAT_threading.fls: Firmware for the W60x chip with threading
+- samd_firmware: Firmware for a couple of SAMD21 and SAMD51 boards.
 
 Some Pycom tarballs:
 
