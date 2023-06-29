@@ -1,13 +1,9 @@
 # Shared-Stuff
-- mpy-cross.exe: Windows version of Micropython cross-compiler for the MP version
-- micropython.exe: Windows version of Micropython
 - mpy-cross_pycom.exe: Windows version of Micropython cross-compiler for the pycom build
 - mpy-cross_pycom_linux: Linux version for the Pycom branch
-- mpy-cross_microython_org_linux: Linux version for the Micropython.org branch
 - xtensa Instruction Set Architecture (ISA).pdf: assembler instruction set of the xtensa architecture, matching the esp8266
-- wm_w600_lfs.fls: Firmware for the W60x chip without threading
-- wm_w600_lfs_threading.fls: Firmware for the W60x chip with threading
 - samd_firmware: Firmware for a couple of SAMD21 and SAMD51 boards.
+- w600_firmware: Firmware for a couple of W600 boards. These differ only in the definition of the boas pins in Pin.board. They all have threading and SSL enabled and use LFS for the internal file system.
 
 Some Pycom tarballs:
 
