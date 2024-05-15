@@ -92,11 +92,11 @@ Currently available selections are:
 - GENERIC
 - THINGSTURN_TB01
 - W600_EVB_V2
-- WAVGAT_AIR602
+- WAVGAT_AIR602, similar to Thingsturn TB02
 - WEMOS_W600
-- WIS600
+- WIS600, as well sold under different names like TW01 or ESP01W.
 
-The firmware of these boards on differs in the set of Pin objects defined in machine.Pin.board.
+The firmware of these boards on differs only in the set of Pin objects defined in machine.Pin.board. The board Thingturn TB01 is sold with 1M or 2M flash. The firmware will use the additional flash for the file system.
 
 Flashing the Firmware
 -----------------------
